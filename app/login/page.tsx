@@ -1,4 +1,4 @@
-import { LoginButton } from "@/components/button";
+import { LoginButton } from "@/components/button/button";
 import Link from "next/link";
 
 const Page = () => {

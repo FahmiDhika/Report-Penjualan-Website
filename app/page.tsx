@@ -11,8 +11,7 @@ export default function Home() {
 
       <Link href={"login"}>
         <div className="boton-elegante">
-          Login
-        </div>
+          Login</div>
       </Link>
     </section>
   );
