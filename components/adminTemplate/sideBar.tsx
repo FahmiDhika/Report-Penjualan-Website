@@ -4,6 +4,10 @@ import { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import MenuItem from "./menuItem";
 import { BiLogOut } from "react-icons/bi";
+import profile from "@/public/Amogus.png";
+import { removeCookie } from "@/lib/client-cookies";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 type menuType = {
   id: string;
@@ -20,13 +24,40 @@ type managerProp = {
 };
 
 const sideBar = ({ children, id, title, menuList }: managerProp) => {
+  const [nama, setNama] = useState<string>("");
+  const [role, setRole] = useState<string>("");
+  const router = useRouter();
+
+  useEffect(() => {
+    const nama = Cookies.get("nama");
+    const role = Cookies.get("role");
+
+    if (nama) {
+      setNama(nama);
+    }
+
+    if (role) {
+      setRole(role);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    removeCookie("token");
+    removeCookie("id");
+    removeCookie("nama");
+    removeCookie("role");
+    router.replace(`/login`);
+  };
+
   return (
     <div className="w-full min-h-dvh flex">
       {/* Sidebar */}
       <div className="w-1/5 h-screen fixed flex flex-col top-0 left-0 px-5 bg-[#323232] text-white py-10">
         {/* Logo */}
-        <div className="w-full text-center flex-grow flex items-center justify-center">
-          <h1 className="font-bold text-5xl">LOGO</h1>
+        <div className="w-full text-center flex-col flex items-center justify-center">
+          <Image src={profile} alt="" width={150}></Image>
+          <h1 className="font-semibold tracking-widest text-lg">{nama}</h1>
+          <h2 className="font-semibold tracking-widest text-md bg-orange-600 px-2 py-1 rounded-full">{role}</h2>
         </div>
 
         {/* Menu List */}
@@ -48,7 +79,9 @@ const sideBar = ({ children, id, title, menuList }: managerProp) => {
         <div className="w-full flex-grow flex items-end justify-center">
           <div className="w-full flex items-center px-6 py-4 bg-red-900 hover:bg-red-600 ease-in-out duration-300 rounded-lg cursor-pointer font-bold shadow-xl">
             <BiLogOut size={32} />
-            <button className="w-auto text-xl ml-3">Log Out</button>
+            <button className="w-auto text-xl ml-3" onClick={handleLogout}>
+              Log Out
+            </button>
           </div>
         </div>
       </div>
@@ -61,7 +94,7 @@ const sideBar = ({ children, id, title, menuList }: managerProp) => {
             {title}
           </h1>
           <h1 className="text-2xl font-semibold py-[2px] px-2 border-b-2 border-[#a00000]">
-            Role, Nama
+            Report Penjualan
           </h1>
         </header>
 

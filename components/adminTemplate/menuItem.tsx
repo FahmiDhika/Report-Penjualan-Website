@@ -17,7 +17,7 @@ const MenuItem = ({ icon, label, path, active }: menuItemProps) => {
       }`}
     >
       <span className="mr-4">{icon}</span>
-      <span className="flex-1 text-xl">{label}</span>
+      <span className="flex-1 text-lg">{label}</span>
     </Link>
   );
 };

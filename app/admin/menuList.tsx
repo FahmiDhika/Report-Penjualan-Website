@@ -18,7 +18,7 @@ let menuList: IPropMenu[] = [
     path: `/admin/dashboard`,
     label: `Dashboard`,
     icon: (
-        <IoHome size={48} />
+        <IoHome size={32} />
     ),
   },
   {
@@ -26,7 +26,7 @@ let menuList: IPropMenu[] = [
     path: `/admin/user`,
     label: `User`,
     icon: (
-      <FaUser size={48} />
+      <FaUser size={32} />
     ),
   },
   {
@@ -34,7 +34,7 @@ let menuList: IPropMenu[] = [
     path: `/admin/produk`,
     label: `Produk`,
     icon: (
-        <GiCardboardBoxClosed size={48} />
+        <GiCardboardBoxClosed size={32} />
     ),
   },
   {
@@ -42,7 +42,7 @@ let menuList: IPropMenu[] = [
     path: `/admin/transaksi`,
     label: `Transaksi`,
     icon: (
-        <IoMdCart size={48} />
+        <IoMdCart size={32} />
     ),
   },
 ];
