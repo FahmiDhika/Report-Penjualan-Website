@@ -31,7 +31,7 @@ const sideBar = ({ children, id, title, menuList }: managerProp) => {
 
         {/* Menu List */}
         <div className="w-full flex-grow flex items-center justify-center">
-          <div className="px-4 w-full text-slate-300 tracking-widest font-semibold">
+          <div className="px-4 w-full text-zinc-100 tracking-widest font-semibold">
             {menuList.map((menu, index) => (
               <MenuItem
                 icon={menu.icon}
@@ -46,7 +46,7 @@ const sideBar = ({ children, id, title, menuList }: managerProp) => {
 
         {/* Log Out Button */}
         <div className="w-full flex-grow flex items-end justify-center">
-          <div className="w-full flex items-center px-6 py-4 bg-red-300 hover:bg-red-600 ease-in-out duration-300 rounded-lg cursor-pointer font-bold">
+          <div className="w-full flex items-center px-6 py-4 bg-red-900 hover:bg-red-600 ease-in-out duration-300 rounded-lg cursor-pointer font-bold shadow-xl">
             <BiLogOut size={32} />
             <button className="w-auto text-xl ml-3">Log Out</button>
           </div>

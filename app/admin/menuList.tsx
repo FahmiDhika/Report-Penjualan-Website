@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
-import { GoHome } from "react-icons/go";
+import { IoHome } from "react-icons/io5";
 import { IoMdCart } from "react-icons/io";
 import { GiCardboardBoxClosed } from "react-icons/gi";
-import { FaRegUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 interface IPropMenu {
   id: string;
@@ -18,7 +18,7 @@ let menuList: IPropMenu[] = [
     path: `/admin/dashboard`,
     label: `Dashboard`,
     icon: (
-        <GoHome size={48} />
+        <IoHome size={48} />
     ),
   },
   {
@@ -26,7 +26,7 @@ let menuList: IPropMenu[] = [
     path: `/admin/user`,
     label: `User`,
     icon: (
-      <FaRegUser size={48} />
+      <FaUser size={48} />
     ),
   },
   {
