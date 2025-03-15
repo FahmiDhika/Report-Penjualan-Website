@@ -56,7 +56,7 @@ const sideBar = ({ children, id, title, menuList }: managerProp) => {
         {/* Logo */}
         <div className="w-full text-center flex-col flex items-center justify-center">
           <Image src={profile} alt="" width={150}></Image>
-          <h1 className="font-semibold tracking-widest text-lg">{nama}</h1>
+          <h1 className="font-semibold tracking-widest text-lg mb-2">{nama}</h1>
           <h2 className="font-semibold tracking-widest text-md bg-orange-600 px-2 py-1 rounded-full">{role}</h2>
         </div>
 
@@ -76,10 +76,10 @@ const sideBar = ({ children, id, title, menuList }: managerProp) => {
         </div>
 
         {/* Log Out Button */}
-        <div className="w-full flex-grow flex items-end justify-center">
-          <div className="w-full flex items-center px-6 py-4 bg-red-900 hover:bg-red-600 ease-in-out duration-300 rounded-lg cursor-pointer font-bold shadow-xl">
+        <div className="w-full flex-grow flex items-end justify-start">
+          <div className="w-fit flex items-center px-4 py-2 bg-red-900 hover:bg-red-600 ease-in-out duration-300 rounded-lg cursor-pointer font-bold shadow-xl">
             <BiLogOut size={32} />
-            <button className="w-auto text-xl ml-3" onClick={handleLogout}>
+            <button className="w-auto text-md ml-3" onClick={handleLogout}>
               Log Out
             </button>
           </div>
@@ -99,7 +99,7 @@ const sideBar = ({ children, id, title, menuList }: managerProp) => {
         </header>
 
         {/* Main Content */}
-        <div className="w-full flex-grow h-fit pt-[120px] overflow-auto py-11 px-16">
+        <div className="w-full flex-grow h-fit pt-[120px] overflow-auto py-11 px-12">
           {children}
         </div>
       </div>

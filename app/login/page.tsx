@@ -50,14 +50,15 @@ const LoginPage = () => {
           hideProgressBar: false,
           containerId: `toastLogin`,
           type: "warning",
-          autoClose: 2000,
+          
         });
     } catch (error) {
       console.log(error);
       toast(`Something wrong`, {
-        hideProgressBar: true,
+        hideProgressBar: false,
         containerId: `toastLogin`,
         type: "error",
+        autoClose: 2000,
       });
     }
   };
